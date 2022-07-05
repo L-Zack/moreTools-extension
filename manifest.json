@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "version": "0.1.0",
+    "name": "MoreTools",
+    "description": "Extensão MoreTools",
+    "author": "Lucas Zacarias",
+    "action": {
+        "default_title": "MoreTools",
+        "default_popup": "index.html"
+    },
+    "default_icon": {
+        "16": "img/icons/mT16.png",
+        "32": "img/icons/mT32.png",
+        "48": "img/icons/mT48.png",
+        "128": "img/icons/mT128.png"          
+    },
+    "icons": {
+        "16": "img/icons/mT16.png",
+        "32": "img/icons/mT32.png",
+        "48": "img/icons/mT48.png",
+        "128": "img/icons/mT128.png"
+    }
+}
