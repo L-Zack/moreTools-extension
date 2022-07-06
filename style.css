@@ -37,39 +37,123 @@ h1 {
     font-weight: 400;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .abas {
+    width: 235px;
     padding: 0;
     margin: 0;
 }
 
 .abas__categoria {
     display:flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    width: 235px;
+    flex-direction: column;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 12px;
+    background-color: #13171f;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.abas__categoria--button {
+    justify-content: start;
+    align-items: flex-start;
 }
 
 .abas__categoria--button {
     background-color: #13171f;
+    width: 235px;
+    font-size: 14px;
     border: none;
-    border-radius: 5px;
+    padding: 0;
+    height: 31px;
+    border-radius: 5px 5px 0px 0px;
     color: #efeff0;
     font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    height: 31px;
-    margin: 0 7px;
-    padding: 5px;
-    width: 235px;
-    text-align: start;
+    align-items: center;
+    display: flex;
+    transition: 1s all;
+}
+
+.abas__categoria--website {
+    align-items: center;
+    display: flex;
+    background-color: #13171f;
+    width: 178px;
+    height: 20px;
+    text-decoration: none;
+    padding: 0 11px;
+    border-left: 2px solid #B1B2B5;
+    padding-bottom: 5px;
+}
+
+.abas__categoria--website:last-child {
+    padding-bottom: 0px;
+}
+
+.abas__categoria--span {
+    width: 178px;
+    height: 20px;
     display: flex;
     align-items: center;
-    transform: 0.5s;
+    justify-content: flex-start;
+    background-color: #1c1f26;
+    border-radius: 5px;
+}
+.abas__categoria--link {
+    color: #efeff0;
+    text-decoration: none;
+    font-size: 12px;
+    width: 125px;
+
 }
 
 .abas__categoria--button:hover {
     background-color: #24262d;
 }
 
-.abas__categoria--arrow {
-    margin-right: 5px;
+.abas__categoria--arrow, .abas__categoria--icon  {
+    height: 21px;
+    width: 21px;
+    margin: 0 7px;
+    transition: 1s all;
 }
+
+.abas__categoria--icon {
+    height: 14px;
+    width: 14px;
+}
+.abas__categoria--arrow {
+    transform: rotate(90deg);
+}
+
+.abas__categoria--favorito {
+    padding: 0;
+    border: none;
+    height: 14px;
+    width: 14px;
+}
+
+.categoria__span--icon {
+    height: 14px;
+    cursor: pointer;
+}
+
+/*
+Itens pra depois:
+button:
+   height: 31px;
+    margin: 0 7px;
+abas-categoria:
+    padding: 0;
+  padding: 5px;
+   */
