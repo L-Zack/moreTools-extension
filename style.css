@@ -37,23 +37,22 @@ h1 {
     font-weight: 400;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.abas {
+
+.abas, .list, .list__button {
     width: 235px;
     padding: 0;
     margin: 0;
 }
 
-.abas__categoria {
+.list {
     display:flex;
-    margin: 0;
-    padding: 0;
-    width: 235px;
     flex-direction: column;
     text-align: start;
     font-size: 14px;
@@ -64,96 +63,78 @@ h1 {
     border-radius: 5px;
 }
 
-.abas__categoria--button {
+.list__button {
     justify-content: start;
     align-items: flex-start;
 }
 
-.abas__categoria--button {
+.list__button {
     background-color: #13171f;
-    width: 235px;
     font-size: 14px;
     border: none;
-    padding: 0;
     height: 31px;
     border-radius: 5px 5px 0px 0px;
     color: #efeff0;
-    font-family: Poppins;
+    font-family: Poppins; 
     align-items: center;
     display: flex;
     transition: 1s all;
 }
 
-.abas__categoria--website {
+.list__item, .list__span {
     align-items: center;
     display: flex;
-    background-color: #13171f;
     width: 178px;
     height: 20px;
+}
+
+.list__item {
+    background-color: #13171f;
     text-decoration: none;
     padding: 0 11px;
     border-left: 2px solid #B1B2B5;
     padding-bottom: 5px;
 }
 
-.abas__categoria--website:last-child {
+.list__item:last-child {
     padding-bottom: 0px;
 }
 
-.abas__categoria--span {
-    width: 178px;
-    height: 20px;
-    display: flex;
-    align-items: center;
+.list__span {
     justify-content: flex-start;
     background-color: #1c1f26;
     border-radius: 5px;
+    transition: 1s all;
 }
-.abas__categoria--link {
-    color: #efeff0;
+.list__anchor {
+    color: #efeff0; 
     text-decoration: none;
     font-size: 12px;
     width: 125px;
-
 }
 
-.abas__categoria--button:hover {
+.list__button:hover, .list__span:hover {
     background-color: #24262d;
 }
 
-.abas__categoria--arrow, .abas__categoria--icon  {
+.list__arrow, .list__icon  {
     height: 21px;
     width: 21px;
     margin: 0 7px;
     transition: 1s all;
 }
 
-.abas__categoria--icon {
+.list__icon {
     height: 14px;
     width: 14px;
 }
-.abas__categoria--arrow {
+
+.list__arrow {
     transform: rotate(90deg);
 }
 
-.abas__categoria--favorito {
-    padding: 0;
-    border: none;
-    height: 14px;
-    width: 14px;
-}
-
-.categoria__span--icon {
+.list__star {
     height: 14px;
     cursor: pointer;
 }
 
-/*
-Itens pra depois:
-button:
-   height: 31px;
-    margin: 0 7px;
-abas-categoria:
-    padding: 0;
-  padding: 5px;
-   */
