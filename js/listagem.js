@@ -3,9 +3,10 @@ import { nomeAbas } from "./tools.js";
 
 const botao = document.querySelectorAll(".list__button");
 
-    let jaListado = [
-        false, false, false, false
-    ];
+    let jaListado = [];
+    for(var i = 0; i < botao.length; i++) {
+        jaListado[i] = false;
+    }
 
 botao.forEach(botao => {
     botao.addEventListener("click", function listagem(){
@@ -15,12 +16,11 @@ botao.forEach(botao => {
         if(jaListado[index]) {
             return 0;
         } else {
-        abas[index].forEach(website => montaLi(website, ul));
-           return jaListado[index] = true; 
+            abas[index].forEach(website => montaLi(website, ul));
+            return jaListado[index] = true; 
         }
     })
 })
-
 
 function montaLi(website, ul) {
     
@@ -40,5 +40,4 @@ function montaLi(website, ul) {
 
     ul.appendChild(li);
     li.innerHTML = conteudo;
-
 }
