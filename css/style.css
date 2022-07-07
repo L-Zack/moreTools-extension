@@ -1,10 +1,10 @@
 body {
+    align-items: center;
     background-color: #010712;
     color: #efeff0;
     font-family: Poppins;
     height: 400px;
     width: 250px;
-    align-items: center;
 }
 
 h1 {
@@ -21,7 +21,6 @@ h1 {
     margin: 10px 7px;
     padding: 5px;
     width: 225px;
-  
 }
 
 .favoritos__titulo {
@@ -39,9 +38,9 @@ h1 {
 
 
 .container {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -52,48 +51,43 @@ h1 {
 }
 
 .list {
+    align-items: center;
+    background-color: #13171f;
+    border-radius: 5px;
     display:flex;
     flex-direction: column;
-    text-align: start;
     font-size: 14px;
     font-weight: 400;
-    padding-bottom: 12px;
-    background-color: #13171f;
+    text-align: start;
+    margin-bottom: 5px;
+}
+
+.list__button {
     align-items: center;
-    border-radius: 5px;
-}
-
-.list__button {
-    justify-content: start;
-    align-items: flex-start;
-}
-
-.list__button {
     background-color: #13171f;
-    font-size: 14px;
     border: none;
-    height: 31px;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px;
     color: #efeff0;
-    font-family: Poppins; 
-    align-items: center;
     display: flex;
+    font-family: Poppins; 
+    font-size: 14px;
+    height: 31px;
     transition: 1s all;
 }
 
 .list__item, .list__span {
     align-items: center;
     display: flex;
-    width: 178px;
     height: 20px;
+    width: 178px;
 }
 
 .list__item {
     background-color: #13171f;
-    text-decoration: none;
-    padding: 0 11px;
     border-left: 2px solid #B1B2B5;
+    padding: 0 11px;
     padding-bottom: 5px;
+    text-decoration: none;
 }
 
 .list__item:last-child {
@@ -101,15 +95,16 @@ h1 {
 }
 
 .list__span {
-    justify-content: flex-start;
     background-color: #1c1f26;
     border-radius: 5px;
+    justify-content: flex-start;
     transition: 1s all;
 }
+
 .list__anchor {
     color: #efeff0; 
-    text-decoration: none;
     font-size: 12px;
+    text-decoration: none;
     width: 125px;
 }
 
@@ -119,9 +114,9 @@ h1 {
 
 .list__arrow, .list__icon  {
     height: 21px;
-    width: 21px;
     margin: 0 7px;
     transition: 1s all;
+    width: 21px;
 }
 
 .list__icon {
@@ -129,12 +124,18 @@ h1 {
     width: 14px;
 }
 
-.list__arrow {
+.list__star {
+    cursor: pointer;
+    height: 14px;
+}
+
+/*
+Adicionar na classe "list" quando criar a função de listagem de sites:
+    padding-bottom: 12px;
+
+
+    .list__arrow {
     transform: rotate(90deg);
 }
 
-.list__star {
-    height: 14px;
-    cursor: pointer;
-}
-
+    */

@@ -12,7 +12,7 @@
 
     var trello = {
         nome: "Trello",
-        url: "trello.com",
+        url: "https://trello.com",
         icon: "img/websites/daily/trello.png"
     }
 
@@ -26,19 +26,19 @@ var daily = [creately, cip, trello, iLovePdf];
 
     var simplenote = {
         nome:"Simplenote",
-        url:"simplenote.com",   
+        url:"https://simplenote.com",   
         icon:"img/websites/anotacoes/simplenote.png"
 }
 
     var evernote = {
         nome:"Evernote",
-        url:"evernote.com",
+        url:"https://evernote.com",
         icon:"img/websites/anotacoes/evernote.png"
 }
 
     var keep = {
         nome:"Google Keep",
-        url:"keep.google.com",
+        url:"https://keep.google.com",
         icon:"img/websites/anotacoes/keep.png"
 }
 
@@ -52,13 +52,13 @@ var anotacoes = [simplenote, evernote, keep];
 
     var mega = {
         nome: "MegaSync",
-        url:"mega.io",
+        url:"https://mega.io",
         icon: "img/websites/cloud/mega.ico"
     }
 
     var drive = {
         nome: "Google Drive",
-        url: "drive.google.com",
+        url: "https://drive.google.com",
         icon: "img/websites/cloud/drive.png"
     }
     
@@ -72,7 +72,7 @@ var cloud = [onedrive, mega, drive, dropbox];
 
     var amazon = {
         nome: "Amazon",
-        url: "www.amazon.com",
+        url: "https://www.amazon.com",
         icon: "img/websites/shopping/amazon.png"    
     }
 
@@ -90,6 +90,5 @@ var cloud = [onedrive, mega, drive, dropbox];
 
 var shopping = [amazon, mercadoLivre, shopee];
 
-var abas = [daily, anotacoes, cloud, shopping];
-console.log(abas);
-console.log("ola");
+export var abas = [daily, anotacoes, cloud, shopping];
+export var nomeAbas = ["Dia a dia", "Anotações", "Cloud", "Shopping"];
