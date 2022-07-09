@@ -129,13 +129,20 @@ h1 {
     height: 14px;
 }
 
-/*
-Adicionar na classe "list" quando criar a função de listagem de sites:
-    padding-bottom: 12px;
+::-webkit-scrollbar {
+    width: 10px;
+} 
 
-
-    .list__arrow {
-    
+::-webkit-scrollbar-track {
+    background: #010712;
+    border-radius: 10px;
 }
 
-    */
+::-webkit-scrollbar-thumb {
+    background: #13171f; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #24262D;
+}
