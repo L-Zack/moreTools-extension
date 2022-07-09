@@ -1,43 +1,26 @@
 import { abas } from "./tools.js";
 import { nomeAbas } from "./tools.js";
+import { adicionaClass, removeClass, excluiChild, montaLi } from "./service.js";
 
 const botao = document.querySelectorAll(".list__button");
+let jaListado = [];
 
-    let jaListado = [];
-    for(var i = 0; i < botao.length; i++) {
+for(var i = 0; i < botao.length; i++) {
         jaListado[i] = false;
-    }
+}
 
 botao.forEach(botao => {
     botao.addEventListener("click", function listagem(){
         var index = nomeAbas.indexOf(botao.innerText);    
-        var ul = botao.parentElement;
 
         if(jaListado[index]) {
-            return 0;
+            excluiChild(index);
+            removeClass(index);
+            return jaListado[index] = false;
         } else {
-            abas[index].forEach(website => montaLi(website, ul));
+            abas[index].forEach(website => montaLi(website, index));
+            adicionaClass(index);
             return jaListado[index] = true; 
         }
     })
-})
-
-function montaLi(website, ul) {
-    
-    const nome = website.nome;
-    const url = website.url;
-    const icon = website.icon;
-
-    const li = document.createElement("li");
-    li.classList.add("list__item");
-
-    const conteudo = 
-        `<span class="list__span">
-            <img class="list__icon" src="${icon}">
-            <a class="list__anchor" href="${url}" target="_blank" rel="noopener noreferrer">${nome}</a>
-            <img class="list__star" src="img/geral/star-regular.png">
-        </span>`;
-
-    ul.appendChild(li);
-    li.innerHTML = conteudo;
-}
+}) 

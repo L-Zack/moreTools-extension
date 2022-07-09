@@ -1,0 +1,7 @@
+.listagem__list {
+    padding-bottom: 5px;
+}
+
+.listagem__arrow {
+    transform: rotate(90deg);
+}

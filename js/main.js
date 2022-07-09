@@ -16,13 +16,4 @@ nomeAbas.forEach(categoria => {
         `;
     aba.appendChild(ul);
     ul.innerHTML = conteudo;
-
 })
-
-
-console.log(abas);
-/*
-
-ul.setAttribute("id", "ul" + nomeDoObjetoCategoria)
-
-*/
