@@ -1,8 +1,9 @@
 import { abas } from "./tools.js";
+import { atualizaIcon } from "./favoritar.js";
 
 var ul = document.querySelectorAll(".list");
 var arrow = document.querySelectorAll(".list__arrow");
-
+var favoriteUl = document.querySelector(".favorito");
 
 export function adicionaClass(index) {
     ul[index].classList.add("listagem__list");
@@ -24,17 +25,21 @@ export function montaLi(website, index) {
     const nome = website.nome;
     const url = website.url;
     const icon = website.icon;
+    const id = website.id;
 
     const li = document.createElement("li");
     li.classList.add("list__item");
 
     const conteudo = 
         `<span class="list__span">
-            <img class="list__icon" src="${icon}">
-            <a class="list__anchor" href="${url}" target="_blank" rel="noopener noreferrer">${nome}</a>
-            <img class="list__star" src="img/geral/star-regular.png">
+            <a class="list__anchor" href="${url}" target="_blank" rel="noopener noreferrer">
+                <img class="list__icon" src="${icon}">${nome}
+            </a>
+            <img class="list__star" id="${id}" src="img/geral/star-regular.png">
         </span>`;
 
     ul[index].appendChild(li);
     li.innerHTML = conteudo;
+    var imgStar = li.querySelector(".list__star");
+    atualizaIcon(imgStar);
 }

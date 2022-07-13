@@ -105,7 +105,9 @@ h1 {
     color: #efeff0; 
     font-size: 12px;
     text-decoration: none;
-    width: 125px;
+    width: 150px;
+    display: flex;
+    align-items: center;
 }
 
 .list__button:hover, .list__span:hover {
