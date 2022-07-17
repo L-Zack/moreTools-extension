@@ -3,7 +3,6 @@ import { atualizaIcon } from "./favoritar.js";
 
 var ul = document.querySelectorAll(".list");
 var arrow = document.querySelectorAll(".list__arrow");
-var favoriteUl = document.querySelector(".favorito");
 
 export function adicionaClass(index) {
     ul[index].classList.add("listagem__list");

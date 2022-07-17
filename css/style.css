@@ -21,6 +21,9 @@ h1 {
     margin: 10px 7px;
     padding: 5px;
     width: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .favoritos__titulo {
@@ -29,7 +32,13 @@ h1 {
     font-size: 16px;
     font-weight: 400;
     margin: 0;
+    width: 225px;
 }
+
+.favoritos__titulo img {
+    padding: 0 0 0 1px;
+}
+
 
 .favoritos__subtitulo {
     font-size: 12px;
@@ -44,13 +53,13 @@ h1 {
     justify-content: center;
 }
 
-.abas, .list, .list__button {
+.abas, .list, .list__button, .favoritos__lista {
     width: 235px;
     padding: 0;
     margin: 0;
 }
 
-.list {
+.list, .favoritos__lista {
     align-items: center;
     background-color: #13171f;
     border-radius: 5px;
@@ -75,14 +84,14 @@ h1 {
     transition: 1s all;
 }
 
-.list__item, .list__span {
+.list__item, .list__span, .favoritos__item {
     align-items: center;
     display: flex;
     height: 20px;
     width: 178px;
 }
 
-.list__item {
+.list__item, .favoritos__item {
     background-color: #13171f;
     border-left: 2px solid #B1B2B5;
     padding: 0 11px;
@@ -90,7 +99,7 @@ h1 {
     text-decoration: none;
 }
 
-.list__item:last-child {
+.list__item:last-child, .favoritos__item:last-child  {
     padding-bottom: 0px;
 }
 
@@ -99,6 +108,10 @@ h1 {
     border-radius: 5px;
     justify-content: flex-start;
     transition: 1s all;
+}
+
+.list__span--favoritado {
+    border: 2px solid #dc1226;
 }
 
 .list__anchor {

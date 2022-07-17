@@ -4,6 +4,7 @@
     "name": "MoreTools",
     "description": "Extensão MoreTools",
     "author": "Lucas Zacarias",
+    "permissions": ["storage"],
     "action": {
         "default_title": "MoreTools",
         "default_popup": "index.html"

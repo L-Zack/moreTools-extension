@@ -1,7 +1,7 @@
 import { abas } from "./tools.js";
 import { nomeAbas } from "./tools.js";
 import { adicionaClass, removeClass, excluiChild, montaLi } from "./service.js";
-import { adicionaFavoritar, atualizaIcon } from "./favoritar.js";
+import { adicionaFavoritar } from "./favoritar.js";
 
 const botao = document.querySelectorAll(".list__button");
 let jaListado = [];
