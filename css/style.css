@@ -139,7 +139,7 @@ h1 {
     width: 14px;
 }
 
-.list__star {
+.list__star, .favorite__star {
     cursor: pointer;
     height: 14px;
 }

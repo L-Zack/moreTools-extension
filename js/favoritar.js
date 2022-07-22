@@ -8,6 +8,7 @@ abas.forEach(categoria => {
 
         if(favoritos[website.id]) {
             montaFavorito(website);
+            deletaFavorito(website.id);
             return
         }
         favoritos[website.id] = false;
@@ -24,17 +25,18 @@ export function adicionaFavoritar() {
                 favoritos[website.id] = false;
                 atualizaIcon(website);
                 atualizaFavoritos(favoritos);
+                removeFavorito(website);
                 website.parentElement.classList.remove("list__span--favoritado");
                 return;
             }
 
             let siteObject;
-
             siteObject = buscaWebsite(website.id);
             favoritos[website.id] = true;
             atualizaFavoritos(favoritos)
             atualizaIcon(website);
             montaFavorito(siteObject);
+            deletaFavorito(website.id);
             website.parentElement.classList.add("list__span--favoritado");
         })
     })
@@ -61,20 +63,21 @@ function montaFavorito(identifier) {
     const id = identifier.id;
 
     const li = document.createElement("li");
+    li.setAttribute("data-favoritado-li", id);
     li.classList.add("favoritos__item");
+    li.setAttribute("id", id);
 
     const conteudo = 
         `<span class="list__span">
             <a class="list__anchor" href="${url}" target="_blank" rel="noopener noreferrer">
                 <img class="list__icon" src="${icon}">${nome}
             </a>
-            <img class="list__star" id="${id}" src="img/geral/star-solid.png">
+            <img class="favorite__star" data-favoritado="${id}" src="img/geral/trash.png">
         </span>`;
 
     favoriteUl.appendChild(li);
     li.innerHTML = conteudo;
 }
-
 
 function buscaWebsite(id) {
     let object; 
@@ -82,10 +85,26 @@ function buscaWebsite(id) {
     abas.forEach(categoria => {
         categoria.forEach(website => {
             if(website.id === id) {
-                console.log("Dentro do if: " + website.id);
                 return object = website;
             }
         })
     })
     return object;
+}
+
+function removeFavorito(favorito) {
+    const favoritoLi = favorito.id;
+    favoriteUl.removeChild(favoriteUl.children[favoritoLi]);
+}
+
+function deletaFavorito(identificador) {
+    const trashButton = document.querySelector(`[data-favoritado="${identificador}"]`);
+
+    trashButton.addEventListener("click", function () {
+        const liAlvo = document.querySelector(`[data-favoritado-li="${identificador}"]`);
+        
+        liAlvo.remove();
+        favoritos[identificador] = false;
+        atualizaFavoritos(favoritos);
+    })
 }
