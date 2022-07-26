@@ -28,13 +28,13 @@ export function montaLi(website, index) {
 
     const li = document.createElement("li");
     li.classList.add("list__item");
-
+    li.setAttribute(`data-website-${id}`, "");
     const conteudo = 
         `<span class="list__span">
             <a class="list__anchor" href="${url}" target="_blank" rel="noopener noreferrer">
                 <img class="list__icon" src="${icon}">${nome}
             </a>
-            <img class="list__star" id="${id}" src="img/geral/star-regular.png">
+            <img class="list__star" id="${id}" data-star-${id} src="img/geral/star-regular.png">
         </span>`;
 
     ul[index].appendChild(li);

@@ -50,6 +50,7 @@ export function atualizaIcon(website) {
         website.setAttribute("src", "./img/geral/star-solid.png");
         website.parentElement.classList.add("list__span--favoritado");
     }
+    console.log(website);
 }
 
 function atualizaFavoritos(lista) {
@@ -106,5 +107,15 @@ function deletaFavorito(identificador) {
         liAlvo.remove();
         favoritos[identificador] = false;
         atualizaFavoritos(favoritos);
+
+        try {
+            const websiteLi = document.querySelector(`[data-website-${identificador}`);
+            const websiteIco = document.querySelector(`[data-star-${identificador}]`);
+            console.log(websiteIco);
+            websiteLi.firstChild.classList.remove("list__span--favoritado");
+            atualizaIcon(websiteIco);
+            console.log(websiteLi);
+        } catch {}
+
     })
 }
