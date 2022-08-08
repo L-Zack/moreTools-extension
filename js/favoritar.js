@@ -16,41 +16,43 @@ abas.forEach(categoria => {
 })
 
 export function adicionaFavoritar() {
-    var website = document.querySelectorAll(".list__star");
+    var websiteStar = document.querySelectorAll(".list__star");
     
-    website.forEach(website => {
+    websiteStar.forEach(website => {
         website.addEventListener("click", function favoritar() {
-            
-            if(favoritos[website.id]) {
-                favoritos[website.id] = false;
+        let websiteId = website.getAttribute("data-li-star");
+        let websiteSpan = document.querySelector(`[data-li-span="${websiteId}"]`);
+
+            if(favoritos[websiteId]) {
+                favoritos[websiteId] = false;
                 atualizaIcon(website);
                 atualizaFavoritos(favoritos);
                 removeFavorito(website);
-                website.parentElement.classList.remove("list__span--favoritado");
+                websiteSpan.classList.remove("list__span--favoritado");
                 return;
             }
 
             let siteObject;
-            siteObject = buscaWebsite(website.id);
-            favoritos[website.id] = true;
+            siteObject = buscaObject(websiteId);
+            favoritos[websiteId] = true;
             atualizaFavoritos(favoritos)
             atualizaIcon(website);
             montaFavorito(siteObject);
-            deletaFavorito(website.id);
-            website.parentElement.classList.add("list__span--favoritado");
+            deletaFavorito(websiteId);
+            websiteSpan.classList.add("list__span--favoritado");        
         })
     })
 }
 
-export function atualizaIcon(website) {
-    if(!favoritos[website.id]) {
-        website.setAttribute("src", "./img/geral/star-regular.png");
+export function atualizaIcon(liStar) {
+    if(!favoritos[liStar.id]) {
+        liStar.setAttribute("src", "./img/geral/star-regular.png");
         return;
     } else {
-        website.setAttribute("src", "./img/geral/star-solid.png");
-        website.parentElement.classList.add("list__span--favoritado");
+        console.log(liStar);
+        liStar.setAttribute("src", "./img/geral/star-solid.png");
+        liStar.parentElement.classList.add("list__span--favoritado");
     }
-    console.log(website);
 }
 
 function atualizaFavoritos(lista) {
@@ -80,13 +82,13 @@ function montaFavorito(identifier) {
     li.innerHTML = conteudo;
 }
 
-function buscaWebsite(id) {
+function buscaObject(id) {
     let object; 
 
     abas.forEach(categoria => {
-        categoria.forEach(website => {
-            if(website.id === id) {
-                return object = website;
+        categoria.forEach(websiteObject => {
+            if(websiteObject.id === id) {
+                return object = websiteObject;
             }
         })
     })
@@ -111,11 +113,8 @@ function deletaFavorito(identificador) {
         try {
             const websiteLi = document.querySelector(`[data-website-${identificador}`);
             const websiteIco = document.querySelector(`[data-star-${identificador}]`);
-            console.log(websiteIco);
             websiteLi.firstChild.classList.remove("list__span--favoritado");
             atualizaIcon(websiteIco);
-            console.log(websiteLi);
         } catch {}
-
     })
 }
