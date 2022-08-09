@@ -1,7 +1,7 @@
 import { abas } from "./tools.js";
 
 const favoritos = JSON.parse(localStorage.getItem("favoritos")) || {};
-var favoriteUl = document.querySelector(".favoritos__lista");
+var favoritosUl = document.querySelector(".favoritos__lista");
 
 abas.forEach(categoria => {
     categoria.forEach(website => {
@@ -27,7 +27,7 @@ export function adicionaFavoritar() {
                 favoritos[websiteId] = false;
                 atualizaIcon(website);
                 atualizaFavoritos(favoritos);
-                removeFavorito(website);
+                removeFavorito(websiteId);
                 websiteSpan.classList.remove("list__span--favoritado");
                 return;
             }
@@ -49,9 +49,9 @@ export function atualizaIcon(liStar) {
         liStar.setAttribute("src", "./img/geral/star-regular.png");
         return;
     } else {
-        console.log(liStar);
         liStar.setAttribute("src", "./img/geral/star-solid.png");
         liStar.parentElement.classList.add("list__span--favoritado");
+        console.log(liStar.parentElement);
     }
 }
 
@@ -78,7 +78,7 @@ function montaFavorito(identifier) {
             <img class="favorite__star" data-favoritado="${id}" src="img/geral/trash.png">
         </span>`;
 
-    favoriteUl.appendChild(li);
+    favoritosUl.appendChild(li);
     li.innerHTML = conteudo;
 }
 
@@ -96,8 +96,7 @@ function buscaObject(id) {
 }
 
 function removeFavorito(favorito) {
-    const favoritoLi = favorito.id;
-    favoriteUl.removeChild(favoriteUl.children[favoritoLi]);
+    favoritosUl.removeChild(favoritosUl.children[favorito]);
 }
 
 function deletaFavorito(identificador) {
@@ -111,10 +110,11 @@ function deletaFavorito(identificador) {
         atualizaFavoritos(favoritos);
 
         try {
-            const websiteLi = document.querySelector(`[data-website-${identificador}`);
-            const websiteIco = document.querySelector(`[data-star-${identificador}]`);
-            websiteLi.firstChild.classList.remove("list__span--favoritado");
-            atualizaIcon(websiteIco);
+            let liStar = document.querySelector(`[data-li-star="${identificador}"]`);
+            let liSpan = document.querySelector(`[data-li-span="${identificador}"]`);
+
+            liSpan.classList.remove("list__span--favoritado");
+            atualizaIcon(liStar);
         } catch {}
     })
 }
