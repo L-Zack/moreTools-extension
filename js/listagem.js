@@ -10,6 +10,7 @@ for(var i = 0; i < botao.length; i++) {
         jaListado[i] = false;
 }
 
+//Adiciona um eventListener as abas renderizadas
 botao.forEach(botao => {
     botao.addEventListener("click", function listagem(){
         var index = nomeAbas.indexOf(botao.innerText);    

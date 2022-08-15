@@ -3,6 +3,7 @@ import { nomeAbas } from "./tools.js";
 
 const aba = document.getElementById("base");
 
+//Cria as abas, ponto de partida da aplicação
 nomeAbas.forEach(categoria => {
     
     const ul = document.createElement("ul");
