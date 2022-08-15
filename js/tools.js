@@ -1,16 +1,32 @@
+    var penpot = {
+        nome: "Penpot",
+        url: "https://penpot.app/",
+        icon: "img/websites/design/penpot.png",
+        id: "penpot"
+    }
+    
+    var figma = {
+        nome: "Figma",
+        url: "https://www.figma.com/",
+        icon: "img/websites/design/figma.png",
+        id: "figma"
+    }
+    
     var creately = {
         nome: "Creately",
         url: "https://creately.com/",
-        icon: "img/websites/daily/creately.png",
+        icon: "img/websites/design/creately.png",
         id: "creately"
     }
 
     var cip = {
         nome: "Color Image Picker",
         url: "https://imagecolorpicker.com/",
-        icon: "img/websites/daily/CIP.png",
+        icon: "img/websites/design/CIP.png",
         id: "cip"
     }
+
+var design = [penpot, figma, creately, cip];
 
     var trello = {
         nome: "Trello",
@@ -26,7 +42,7 @@
         id: "ilovepdf"
     }
 
-var daily = [creately, cip, trello, iLovePdf];
+var daily = [trello, iLovePdf];
 
     var simplenote = {
         nome:"Simplenote",
@@ -104,5 +120,5 @@ var cloud = [onedrive, mega, drive, dropbox];
 
 var shopping = [amazon, mercadoLivre, shopee];
 
-export var abas = [daily, anotacoes, cloud, shopping];
-export var nomeAbas = ["Dia a dia", "Anotações", "Cloud", "Shopping"];
+export var abas = [design, daily, anotacoes, cloud, shopping];
+export var nomeAbas = ["Design", "Dia a dia", "Anotações", "Cloud", "Shopping"];
