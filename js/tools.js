@@ -65,7 +65,7 @@ var daily = [trello, iLovePdf];
         id: "keep"
 }
 
-var anotacoes = [simplenote, evernote, keep];
+var notes = [simplenote, evernote, keep];
 
     var onedrive = {
         nome: "Onedrive",
@@ -120,5 +120,5 @@ var cloud = [onedrive, mega, drive, dropbox];
 
 var shopping = [amazon, mercadoLivre, shopee];
 
-export var abas = [design, daily, anotacoes, cloud, shopping];
-export var nomeAbas = ["Design", "Dia a dia", "Anotações", "Cloud", "Shopping"];
+export var abas = [design, daily, notes, cloud, shopping];
+export var nomeAbas = ["Design", "Daily", "Notes", "Cloud", "Shopping"];
